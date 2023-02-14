@@ -46,7 +46,7 @@ const server = app.listen(
   console.log(`Server running on PORT ${PORT}...`.yellow.bold)
 );
 
-const io = require("socket.io")(server, { cors: { origin: "*" } });
+const io = require("socket.io")(server);
 
 io.on("connection", (socket) => {
   console.log("Connected to socket.io");
