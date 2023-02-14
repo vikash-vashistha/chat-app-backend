@@ -49,7 +49,7 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "https://vikashchatapp.netlify.app/",
+    origin: "https://vikashchatapp.netlify.app",
     allowedHeaders: ["my-custom-header"],
     credentials: true,
   },
