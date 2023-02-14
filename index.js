@@ -11,11 +11,11 @@ const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 dotenv.config();
 connectDB();
 
-app.use(cors());
 
 // end points
 app.use('/api/user', userRoutes);
@@ -49,7 +49,7 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://vikashchatapp.netlify.app",
     // credentials: true,
   },
 });
