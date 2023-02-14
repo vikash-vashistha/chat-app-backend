@@ -48,9 +48,9 @@ const server = app.listen(
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: "https://vikashchatapp.netlify.app",
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    allowedHeaders: ["Origin", "Content-Type", "Accept", "Authorization", "X-Request-With"],
+    origin: ["*"],
+    methods: ["POST", "PUT", "GET", "DELETE", "OPTIONS"],
+    allowedHeaders: ["*"],
     credentials: true,
   },
 });
