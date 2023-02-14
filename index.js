@@ -2,7 +2,7 @@ const express = require("express");
 const chats = require("./data/data");
 const dotenv = require("dotenv");
 const colors = require('colors')
-var cors = require("cors");
+const cors = require("cors");
 const connectDB = require("./configs/db");
 const userRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
@@ -48,10 +48,10 @@ const server = app.listen(
 
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
-  cors: {
-    origin: "https://vikashchatapp.netlify.app",
+  
+    origin: "https://vikashchatapp.netlify.app/",
     // credentials: true,
-  },
+
 });
 
 io.on("connection", (socket) => {
