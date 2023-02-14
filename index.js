@@ -48,10 +48,10 @@ const server = app.listen(
 
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
-  cors: {
+  // cors: {
     origin: "https://vikashchatapp.netlify.app",
     // credentials: true,
-  },
+  // },
 });
 
 io.on("connection", (socket) => {
