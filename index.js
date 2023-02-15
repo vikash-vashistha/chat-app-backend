@@ -26,18 +26,23 @@ app.use(notFound);
 app.use(errorHandler);
 
 
-// app.get("/", (req, res) => {
-//   res.send("API is Running")
-// })
+// --------------------------deployment------------------------------
 
-// app.get("/api/chat", (req, res) => {
-//   res.send(chats);
-// });
+const __dirname1 = path.resolve();
 
-// app.get("/api/chat/:id", (req, res) => {
-//   const singleChat = chats.find((c) => c._id == req.params.id)
-//   res.send(singleChat);
-// });
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname1, "/frontend/build")));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running..");
+  });
+}
+
+// --------------------------deployment------------------------------
 
 const PORT = process.env.PORT || 8000;
 
