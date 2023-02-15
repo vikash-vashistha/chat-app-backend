@@ -48,10 +48,7 @@ const server = app.listen(
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: ["*"],
-    methods: ["POST", "PUT", "GET", "DELETE", "OPTIONS"],
-    allowedHeaders: ["*"],
-    credentials: true,
+    origin: '*'
   },
 });
 
