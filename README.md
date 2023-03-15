@@ -39,6 +39,6 @@ Single-user as well as group chat can be done by the user</li>
 
 ### Thanks 😊.
 
-![ChatApp](/src/img1.png)
-![ChatApp](/src/img2.png)
+![ChatApp](/img1.png)
+![ChatApp](/img2.png)
 
